@@ -9,7 +9,7 @@ export default function Sociallinks() {
             icon: (
                 <Image className="dark:invert" src={'/github.svg'} height={36} width={36} alt="GitHub" />
             ),
-            href: "https://github.com/ankush-web-eng/",
+            href: "https://github.com/whyankush07/",
         },
 
         {
