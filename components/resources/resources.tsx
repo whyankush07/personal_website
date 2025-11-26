@@ -65,11 +65,13 @@ const Resources = () => {
         if (filename.includes('Cloud_Computing')) return <Users className="w-5 h-5" />;
         if (filename.includes('Machine_Learning')) return <Users className="w-5 h-5" />;
         if (filename.includes('Technical_skills')) return <Users className="w-5 h-5" />;
+        if (filename.includes('AIML')) return <Users className="w-5 h-5" />;
         return <FileText className="w-5 h-5" />;
     };
 
     const getCategoryForResource = (filename: string): 'roadmap' | 'guide' | 'blueprint' => {
         if (filename.includes('roadmap')) return 'roadmap';
+        if (filename.includes('Roadmap')) return 'roadmap';
         if (filename.includes('Blueprint')) return 'blueprint';
         return 'guide';
     };
@@ -95,6 +97,7 @@ const Resources = () => {
         if (filename.includes('Cloud_Computing')) return 'Guide to mastering cloud computing';
         if (filename.includes('Machine_Learning')) return 'Comprehensive machine learning resources';
         if (filename.includes('Technical_skills')) return 'Essential technical skills guide';
+        if (filename.includes('AIML')) return 'AI and ML learning & winning resources';
         return 'Professional development resource';
     };
 
@@ -109,7 +112,8 @@ const Resources = () => {
         'Freelancing_Roadmap.pdf',
         'Cloud_Computing_Roadmap.pdf',
         'Machine_Learning_Resource.pdf',
-        'Technical_skills_guide.pdf'
+        'Technical_skills_guide.pdf',
+        'AIML_BluePrint_By_Ankush.pdf'
     ].map(filename => ({
         title: formatTitle(filename),
         url: `/Resources/${filename}`,
