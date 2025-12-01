@@ -14,7 +14,6 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 15 }}
                 transition={{ delay: 0.8, duration: 1.3, ease: 'easeInOut' }}
-            // style={{ scaleX: scrollYProgress }}
             >
                 {children}
             </motion.div>
