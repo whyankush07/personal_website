@@ -8,7 +8,7 @@ import { FaCode, FaLaptopCode, FaTrophy, FaUniversity } from "react-icons/fa";
 import { MdSchool, MdSportsBasketball } from "react-icons/md";
 import { BsPeopleFill, BsTools } from "react-icons/bs";
 
-import { ScrollAnimationWrapper } from "@/components/pages/homepage";
+import { ScrollAnimationWrapper } from "@/context/ScrollAnimationWrapper";
 
 export default function About() {
   return (

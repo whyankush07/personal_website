@@ -9,7 +9,7 @@ import { FaPen, FaBookOpen, FaInstagram } from "react-icons/fa";
 import { MdOutlineArticle } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 import TwoGhostsSkeleton from "../skeleton/TwoGhostsSkeleton";
-import { ScrollAnimationWrapper } from "@/components/pages/homepage";
+import { ScrollAnimationWrapper } from "@/context/ScrollAnimationWrapper";
 
 const AllGhosts = dynamic(() => import("@/components/ghost/getallghosts"), {
   ssr: false,

@@ -83,7 +83,7 @@ export default function Page() {
             scale: 1,
             rotateX: 0,
             transition: {
-                type: "spring",
+                type: "spring" as const,
                 damping: 25,
                 stiffness: 120,
                 duration: 0.6
@@ -94,7 +94,7 @@ export default function Page() {
             scale: 1.03,
             rotateY: 5,
             transition: {
-                type: "spring",
+                type: "spring" as const,
                 damping: 10,
                 stiffness: 200
             }
