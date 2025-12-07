@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function YouTube() {
   return (
     <SocialCard
-      title="YouTube Channel"
+      title="I document hackathons and college life (YouTube)"
       username="@howankush07"
       href="https://youtube.com/@howankush07"
       platform="YouTube"

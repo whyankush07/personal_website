@@ -9,9 +9,10 @@ import { MdConnectWithoutContact, MdOutlineWork } from "react-icons/md";
 import { BsTools, BsBriefcase } from "react-icons/bs";
 import CV from "@/components/includes/cv";
 import GetSingleProjectsSkeleton from "@/components/skeleton/TwoProjectSkeleton";
-import { ScrollAnimationWrapper } from "@/components/pages/homepage";
 import { useSession } from "next-auth/react";
 import Testimonials from "../freelance/testimonials";
+import { ScrollAnimationWrapper } from "@/context/ScrollAnimationWrapper";
+import EmailCTA from "../footer/EmailCTA";
 
 const GetALlLinks = dynamic(() => import("@/components/projects/ProjectLinks"), { ssr: false })
 const Skills = dynamic(() => import("@/components/includes/skills"), { ssr: false })
@@ -28,9 +29,14 @@ export default function Freelance() {
     <div className="flex flex-col space-y-5">
       {/* Header Section */}
       <ScrollAnimationWrapper>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-3">
           <h1 className="text-sky-500 text-6xl font-bold">Professional Journey</h1>
           <div className="h-1 w-20 bg-sky-500 rounded-full"></div>
+          <p className="text-gray-600 dark:text-slate-400 text-lg leading-relaxed max-w-3xl">
+            Precision over noise. Systems over shortcuts.
+            <br />
+            Everything here is built, tested, shipped, and backed by real work.
+          </p>
         </div>
       </ScrollAnimationWrapper>
 
@@ -41,26 +47,59 @@ export default function Freelance() {
             <FaUserTie className="text-sky-500" /> Professional Overview
           </h2>
           <p className="text-gray-600 dark:text-slate-300 leading-relaxed">
-            As a Full Stack Developer with expertise in Go, Node.js, and Next.js, I specialize in building
-            high-concurrency backend systems, microservice architectures, and real-time applications. I&apos;m currently
-            in my third year of engineering, balancing academics with professional development and client work.
+            I build full-stack systems that behave like they were engineered, not assembled.
+            High-concurrency backends, distributed architectures, scalable applications, and clean interfaces that feel effortless on the outside while running complex orchestration underneath.
+          </p>
+          <div className="mt-4 space-y-2">
+            <p className="text-gray-600 dark:text-slate-300 font-medium">My work has covered:</p>
+            <ul className="text-gray-600 dark:text-slate-300 space-y-1 ml-4">
+              <li>• Fast, resilient API systems</li>
+              <li>• Multi-service infrastructure</li>
+              <li>• Real-time features with zero drama</li>
+              <li>• Production-grade applications used by real users, not just demo videos</li>
+            </ul>
+          </div>
+          <p className="text-gray-600 dark:text-slate-300 leading-relaxed mt-4">
+            Third year of engineering or not, the portfolio speaks louder than the calendar.
           </p>
         </div>
       </ScrollAnimationWrapper>
 
-      {/* Services & Availability */}
+      {/* Proof of Work */}
       <ScrollAnimationWrapper direction="right">
         <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm p-6 rounded-lg shadow-md dark:shadow-blue-950/20">
           <h2 className="text-2xl font-bold flex items-center gap-2 mb-3">
-            <FaHandshake className="text-sky-500" /> Available for Hire
+            <BsTools className="text-sky-500" /> Proof of Work
           </h2>
-          <p className="text-gray-600 dark:text-slate-300 leading-relaxed">
-            If you are a client looking for a freelancer, you are at the{" "}
-            <span className="text-sky-500 font-semibold">right place</span>. My services include full-stack web development,
-            system architecture design, and technical consultation. Feel free to contact me through my social media
-            handles or by email. You can provide your project details using the form at the{" "}
-            <span className="text-sky-500 font-semibold">bottom</span> of the page.
+          <p className="text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+            You judge a builder by what he&apos;s built.
+            <br />
+            So here&apos;s the work, not the promises:
           </p>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-semibold text-gray-700 dark:text-slate-200">Applications shipped</h3>
+              <p className="text-gray-600 dark:text-slate-300 text-sm">
+                Real products solving real problems.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-700 dark:text-slate-200">Projects delivered</h3>
+              <p className="text-gray-600 dark:text-slate-300 text-sm">
+                From startups to individual founders, I&apos;ve built systems that scaled beyond their expectations.
+                <br />
+                No templates. No &quot;MVP but unstable.&quot;
+                <br />
+                Just tight engineering with predictable performance.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-700 dark:text-slate-200">Freelance Builds</h3>
+              <p className="text-gray-600 dark:text-slate-300 text-sm">
+                Each project reflects one philosophy: make it clean, make it fast, make it last.
+              </p>
+            </div>
+          </div>
         </div>
       </ScrollAnimationWrapper>
 
@@ -68,10 +107,12 @@ export default function Freelance() {
       <ScrollAnimationWrapper direction="left">
         <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm p-6 rounded-lg shadow-md dark:shadow-blue-950/20">
           <h2 className="text-2xl font-bold flex items-center gap-2 mb-3">
-            <MdConnectWithoutContact className="text-sky-500" /> Let&apos;s Connect
+            <MdConnectWithoutContact className="text-sky-500" /> Social Presence
           </h2>
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+            If you want to understand how I think, not just what I build:
+          </p>
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-            I regularly share my work and insights on full-stack development and emerging tech. Connect with me on{" "}
             <motion.a
               href={'https://x.com/whyankush07'}
               className="text-sky-500 font-semibold inline-flex items-center gap-1"
@@ -80,7 +121,8 @@ export default function Freelance() {
             >
               Twitter <span className="text-xs">↗</span>
             </motion.a>{" "}
-            and{" "}
+            for raw thoughts, experiments, and engineering breakdowns.
+            <br />
             <motion.a
               href={'https://www.linkedin.com/in/whyankush07'}
               className="text-sky-500 font-semibold inline-flex items-center gap-1"
@@ -89,7 +131,12 @@ export default function Freelance() {
             >
               LinkedIn <span className="text-xs">↗</span>
             </motion.a>{" "}
-            for the latest updates.
+            for deeper dives, updates, and client-side clarity.
+          </p>
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed mt-3">
+            It&apos;s not content.
+            <br />
+            It&apos;s proof of how I approach my work.
           </p>
         </div>
       </ScrollAnimationWrapper>
@@ -104,7 +151,9 @@ export default function Freelance() {
             <BsBriefcase className="text-sky-500" /> Resume & Portfolio
           </h2>
           <p className="text-gray-600 dark:text-slate-300 mb-4">
-            Download my detailed resume to learn more about my experience, education, and technical skills.
+            If you want the long-form breakdown of skills, experience, and delivered work, download the resume.
+            <br />
+            Straight numbers. Straight results.
           </p>
           <div className="flex space-x-4 justify-start">
             <CV />
@@ -121,10 +170,12 @@ export default function Freelance() {
       <ScrollAnimationWrapper direction="left">
         <div className="space-y-3">
           <h2 className="text-4xl text-sky-500 font-bold flex items-center gap-2">
-            <FaHandshake className="text-sky-500" /> Client Testimonials
+            <FaHandshake className="text-sky-500" /> Testimonials
           </h2>
           <p className="text-gray-600 dark:text-slate-300">
-            What clients say about working with me on their projects
+            People who trusted me once usually trust me again.
+            <br />
+            Their words, not mine.
           </p>
         </div>
       </ScrollAnimationWrapper>
@@ -165,7 +216,7 @@ export default function Freelance() {
             <BsTools className="text-sky-500" /> Applications & Products
           </h2>
           <p className="text-gray-600 dark:text-slate-300">
-            A showcase of the applications and products I&apos;ve developed
+            Real products solving real problems.
           </p>
           <ApplicationGrid />
         </div>
@@ -175,10 +226,25 @@ export default function Freelance() {
       <ScrollAnimationWrapper>
         <div className="space-y-3">
           <h2 className="text-3xl font-bold flex items-center gap-2">
-            <FaCode className="text-sky-500" /> Technical Skills
+            <FaCode className="text-sky-500" /> Skills & Engineering Approach
           </h2>
           <p className="text-gray-600 dark:text-slate-300">
-            Core technologies and frameworks I&apos;ve mastered
+            Tools evolve. Foundations don&apos;t.
+            <br />
+            I use Go, Node.js, and Next.js to build systems that prioritize:
+          </p>
+          <ul className="text-gray-600 dark:text-slate-300 space-y-1 ml-4">
+            <li>• Speed without fragility</li>
+            <li>• Structure without over-engineering</li>
+            <li>• Scalability without unnecessary cost</li>
+            <li>• Developer experience that keeps teams fast, not frustrated</li>
+          </ul>
+          <p className="text-gray-600 dark:text-slate-300 mt-3">
+            Design decisions matter.
+            <br />
+            Architecture matters.
+            <br />
+            Execution matters more than all of them.
           </p>
           <Skills />
         </div>
@@ -188,10 +254,15 @@ export default function Freelance() {
       <ScrollAnimationWrapper direction="left">
         <div className="space-y-3">
           <h2 className="text-4xl font-bold flex items-center gap-2">
-            <MdConnectWithoutContact className="text-sky-500" /> Let&apos;s Work Together
+            <MdConnectWithoutContact className="text-sky-500" /> Let&apos;s Build
           </h2>
           <p className="text-gray-600 dark:text-slate-300">
-            Have a project in mind? Let&apos;s discuss how I can help bring your vision to life.
+            If you&apos;ve got a problem worth solving or a product worth scaling, reach out.
+            <br />
+            I&apos;ll bring the engineering clarity and execution discipline your idea needs.
+          </p>
+          <p className="text-gray-600 dark:text-slate-300 font-medium">
+            Your project gets one thing from me: forward momentum.
           </p>
         </div>
       </ScrollAnimationWrapper>
@@ -199,33 +270,6 @@ export default function Freelance() {
       <ScrollAnimationWrapper direction="right">
         <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm p-4 rounded-lg shadow-md dark:shadow-blue-950/20">
           <Form />
-        </div>
-      </ScrollAnimationWrapper>
-
-      {/* Email Contact Section */}
-      <ScrollAnimationWrapper direction="left">
-        <div className="py-6 flex space-x-6 space-y-4 flex-wrap">
-          <motion.div
-            className="w-fit px-6 py-5 dark:text-slate-300 text-slate-500 bg-white dark:bg-slate-800/50 flex flex-col shadow-lg dark:shadow-blue-950/30 rounded-lg border-l-4 border-sky-500"
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)"
-            }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <p className="text-lg font-medium">Prefer direct communication?</p>
-            <motion.span
-              className="text-sky-500 flex items-center space-x-2 mt-2 text-lg"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              <RiMailCheckFill size={20} />
-              <Link href="mailto:ankushsingh.dev@gmail.com">
-                ankushsingh.dev@gmail.com
-              </Link>
-            </motion.span>
-          </motion.div>
         </div>
       </ScrollAnimationWrapper>
 

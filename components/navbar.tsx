@@ -153,27 +153,27 @@ export const Navbar = () => {
         </svg>
       ),
     },
-    {
-      path: "/kaizen",
-      label: "Blogs",
-      icon: (active, hovered) => (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          className={`${getIconColor("/kaizen")} transition-all duration-300 ease-in-out`}
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="currentColor"
-          fill="none"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-        </svg>
-      ),
-    },
+    // {
+    //   path: "/kaizen",
+    //   label: "Blogs",
+    //   icon: (active, hovered) => (
+    //     <svg
+    //       width="24"
+    //       height="24"
+    //       viewBox="0 0 24 24"
+    //       className={`${getIconColor("/kaizen")} transition-all duration-300 ease-in-out`}
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       stroke="currentColor"
+    //       fill="none"
+    //       strokeWidth="2"
+    //       strokeLinecap="round"
+    //       strokeLinejoin="round"
+    //     >
+    //       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+    //       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    //     </svg>
+    //   ),
+    // },
   ];
 
   return (
@@ -181,7 +181,7 @@ export const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navbarVariants}
-      className="flex justify-evenly md:justify-center items-end fixed md:sticky md:top-0 bottom-0 md:flex-col py-3 md:space-y-10 md:h-screen md:w-[12%] max-sm:space-x-7 w-full md:border-r md:border-r-inherit md:dark:border-r-inherit dark:border-slate-800 z-50 backdrop-filter backdrop-blur-lg bg-[#edeeeb] dark:bg-slate-900/80"
+      className="flex justify-evenly md:justify-center items-end md:flex-col py-3 md:space-y-10 h-full w-full max-sm:space-x-7 md:border-r md:border-r-inherit md:dark:border-r-inherit dark:border-slate-800 backdrop-filter backdrop-blur-lg bg-[#edeeeb] dark:bg-slate-900/80"
     >
       {navItems.map((item) => (
         <motion.li
@@ -193,20 +193,41 @@ export const Navbar = () => {
             href={item.path}
             onMouseEnter={() => setHoveredItem(item.path)}
             onMouseLeave={() => setHoveredItem(null)}
-            className="relative block p-2 rounded-lg transition-all duration-300 hover:scale-110"
+            className="relative block"
           >
-            {item.icon(isActive(item.path), hoveredItem === item.path)}
+            <motion.div
+              className="relative p-2 rounded-lg transition-all duration-300"
+              whileHover={{ scale: 1.1, rotate: 0.5 }}
+              transition={{ duration: 0.2 }}
+            >
+              {item.icon(isActive(item.path), hoveredItem === item.path)}
 
-            {(isActive(item.path) || hoveredItem === item.path) && (
-              <motion.div
-                layoutId="glow"
-                className="absolute inset-0 rounded-lg bg-blue-500/10 dark:bg-blue-400/20 -z-10 filter blur-md"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              />
-            )}
+              {(isActive(item.path) || hoveredItem === item.path) && (
+                <motion.div
+                  layoutId="glow"
+                  className="absolute inset-0 rounded-lg bg-blue-500/10 dark:bg-blue-400/20 -z-10 filter blur-md"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              )}
+
+              {(isActive(item.path) || hoveredItem === item.path) && (
+                <motion.div
+                  className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full opacity-60"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.6, 0.8, 0.6]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              )}
+            </motion.div>
 
             <motion.span
               className="absolute left-full ml-2 whitespace-nowrap hidden md:block text-sm font-medium text-gray-700 dark:text-gray-300"

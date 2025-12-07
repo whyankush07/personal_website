@@ -34,11 +34,6 @@ module.exports = {
       lastmod: new Date().toISOString(),
     },
     {
-      loc: '/kaizen',
-      priority: 0.8,
-      lastmod: new Date().toISOString(),
-    },
-    {
       loc: '/messages',
       priority: 0.8,
       lastmod: new Date().toISOString(),
