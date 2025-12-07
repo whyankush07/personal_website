@@ -70,27 +70,27 @@ const cards = [
         content: <SkeletonOne />,
         className: "md:col-span-2",
         thumbnail:
-            "/Instagrampage.png",
+            "/InstagramPage.png",
     },
     {
         id: 2,
         content: <SkeletonTwo />,
         className: "col-span-1",
         thumbnail:
-            "/Linkedinpage.png",
+            "/LinkedinPage.png",
     },
     {
         id: 3,
         content: <SkeletonThree />,
         className: "col-span-1",
         thumbnail:
-            "/Githubpage.png",
+            "/GithubPage.png",
     },
     {
         id: 4,
         content: <SkeletonFour />,
         className: "md:col-span-2",
         thumbnail:
-            "/Youtubepage.png",
+            "/YoutubePage.png",
     },
 ];
