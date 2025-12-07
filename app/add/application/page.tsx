@@ -1,6 +1,6 @@
 "use client";
 
-import GetALlLinks from "@/components/projects/getalllinks";
+import GetALlLinks from "@/components/projects/ProjectLinks";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { ApiResponse } from "@/types/ApiResponse";

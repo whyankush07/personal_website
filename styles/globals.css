@@ -3,81 +3,96 @@
 @tailwind utilities;
 
 .dark body {
-  @apply bg-[#020817];
+  @apply bg-[#0a0a0a];
 }
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 195 69% 66%; /* #62c1e5 */
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 195 69% 66%; /* #62c1e5 */
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 195 69% 66%;
 
     --radius: 0.5rem;
+    
+    /* Custom button colors */
+    --button: 195 69% 66%; /* #62c1e5 */
+    --button-hover: 195 73% 78%; /* #a0d9ef */
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 0 0% 6%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 0 0% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 195 69% 66%; /* #62c1e5 */
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 195 69% 66%; /* #62c1e5 */
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 195 69% 66%;
     
+    /* Custom button colors */
+    --button: 195 69% 66%; /* #62c1e5 */
+    --button-hover: 195 73% 78%; /* #a0d9ef */
   }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #09fcff;
-  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 ::-webkit-scrollbar-track {
@@ -90,5 +105,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom button utilities */
+@layer components {
+  .btn-primary {
+    @apply bg-[hsl(var(--button))] text-foreground hover:bg-[hsl(var(--button-hover))] transition-colors duration-200;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[hsl(var(--button))] text-[hsl(var(--button))] hover:bg-[hsl(var(--button-hover))] hover:border-[hsl(var(--button-hover))] hover:text-foreground transition-colors duration-200;
   }
 }

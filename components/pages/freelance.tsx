@@ -13,12 +13,12 @@ import { ScrollAnimationWrapper } from "@/components/pages/homepage";
 import { useSession } from "next-auth/react";
 import Testimonials from "../freelance/testimonials";
 
-const GetALlLinks = dynamic(() => import("@/components/projects/getalllinks"), { ssr: false })
+const GetALlLinks = dynamic(() => import("@/components/projects/ProjectLinks"), { ssr: false })
 const Skills = dynamic(() => import("@/components/includes/skills"), { ssr: false })
 const Form = dynamic(() => import("@/components/includes/form"), { ssr: false })
 const ApplicationGrid = dynamic(() => import("@/components/applications/applicationGrid"), { ssr: false })
 const GetAllProjects = dynamic(() => import("@/components/projects/getallprojects"), { ssr: false, loading: () => <GetSingleProjectsSkeleton /> })
-const FreelanceProjectsLink = dynamic(() => import("@/components/freelance/freelanceProjects"), { ssr: false })
+const FreelanceProjectsLink = dynamic(() => import("@/components/freelance/Freelance"), { ssr: false })
 
 export default function Freelance() {
   const { data: session } = useSession();

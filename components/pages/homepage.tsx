@@ -10,10 +10,10 @@ import TypewriterMain from "@/components/library/type";
 import TwoGhostsSkeleton from "@/components/skeleton/TwoGhostsSkeleton";
 import ApplicationGridSkeleton from "@/components/skeleton/ApplicationGridSkeleton";
 import ProfileCover from "@/components/includes/profileCover";
-import YouTube, { Insta, TestimonialLink } from "../footer/insta";
+import Instagram, { Testimonials, YouTube } from "@/components/footer/SocialCards";
 
 // Dynamic imports
-const GetALlLinks = dynamic(() => import("@/components/projects/getalllinks"));
+const GetALlLinks = dynamic(() => import("@/components/projects/ProjectLinks"));
 const TwoGhosts = dynamic(() => import("@/components/ghost/twoghosts"), {
   ssr: false,
   loading: () => <TwoGhostsSkeleton />
@@ -25,7 +25,7 @@ const ApplicationPreview = dynamic(() => import("@/components/applications/appli
   ssr: false,
   loading: () => <ApplicationGridSkeleton />
 });
-const FreelanceProjectsLink = dynamic(() => import("@/components/freelance/freelanceProjects"), {
+const FreelanceProjectsLink = dynamic(() => import("@/components/freelance/Freelance"), {
   ssr: false
 });
 
@@ -141,12 +141,12 @@ export default function Homepage() {
       </div>
       <div className="md:hidden">
         <ScrollAnimationWrapper>
-          <TestimonialLink />
+          <Testimonials />
         </ScrollAnimationWrapper>
       </div>
       <div className="md:hidden">
         <ScrollAnimationWrapper>
-          <Insta />
+          <Instagram />
         </ScrollAnimationWrapper>
       </div>
       <div className="md:hidden">

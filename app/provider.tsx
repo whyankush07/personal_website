@@ -1,15 +1,12 @@
-
-import Footer from "@/components/footer/footer";
 import Header from "@/components/header";
 import { Navbar } from "@/components/navbar";
-import { getServerSession } from "next-auth";
 import { ThemeProvider } from "@/context/theme-provider";
-import SessionProvider from "@/context/SessionProvider";
+import FooterComponent from "@/components/footer/FooterComponent";
+import SessionProviderWrapper from "@/context/SessionProvider";
 
 export default async function Provider({ children }: { children: React.ReactNode }) {
-    const session = await getServerSession().catch(() => null);
     return (
-        <SessionProvider session={session}>
+        <SessionProviderWrapper >
             <ThemeProvider
                 attribute="class"
                 defaultTheme="light"
@@ -21,9 +18,9 @@ export default async function Provider({ children }: { children: React.ReactNode
                         <Header />
                         {children}
                     </div>
-                    <Footer />
+                    <FooterComponent />
                 </div>
             </ThemeProvider>
-        </SessionProvider >
+        </SessionProviderWrapper >
     );
 }
