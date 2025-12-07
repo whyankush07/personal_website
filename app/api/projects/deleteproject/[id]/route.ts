@@ -3,14 +3,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 type Params = {
-    params : {
+    params : Promise<{
         id:string
-    }
+    }>
 }
 
 export async function GET(req : NextRequest, context: Params){
     try {
-        const newId = context.params.id
+        const params = await context.params;
+        const newId = params.id
         const project = await prisma.projects.delete({
             where: {
                 id: newId

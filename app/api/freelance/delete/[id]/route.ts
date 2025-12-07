@@ -5,14 +5,15 @@ import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 type Params = {
-    params: {
+    params: Promise<{
         id: string
-    }
+    }>
 }
 
 export async function GET(req: NextRequest, context: Params) {
     Connect();
-    const id = context.params.id;
+    const params = await context.params;
+    const id = params.id;
 
     try {
 
