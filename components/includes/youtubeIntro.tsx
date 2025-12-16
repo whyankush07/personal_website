@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function YouTubeVideo() {
 
-    const [loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(false);
 
     return (
         <>

@@ -8,6 +8,7 @@ import { metadata as siteMetadata } from '@/config/metadata';
 import NextTopLoader from 'nextjs-toploader';
 import CloudflareAnalytics from '@/components/CloudflareAnalytics';
 import { Toaster as SonnerToast } from "@/components/ui/sonner"
+import IntentPopup from "@/components/IntentPopup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
           <NextTopLoader
             showSpinner={false}
           />
+          <IntentPopup />
           {children}
           <OfflineNotification />
         </Provider>

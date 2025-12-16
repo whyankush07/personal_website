@@ -1,14 +1,13 @@
 'use client';
+
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { RiMailCheckFill } from "react-icons/ri";
-import { FaCode, FaLaptopCode, FaTrophy, FaUniversity } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaCode, FaLaptopCode, FaTrophy } from "react-icons/fa";
 import { MdSchool, MdSportsBasketball } from "react-icons/md";
 import { BsPeopleFill, BsTools } from "react-icons/bs";
 
 import { ScrollAnimationWrapper } from "@/context/ScrollAnimationWrapper";
+import EmailCTA from "../footer/EmailCTA";
 
 export default function About() {
   return (
@@ -26,8 +25,7 @@ export default function About() {
         >
           <Image
             src="/ank-bar.JPG"
-            alt="about image"
-            className=""
+            alt="Ankush portrait"
             height={520}
             width={520}
             loading="eager"
@@ -50,34 +48,43 @@ export default function About() {
 
       <ScrollAnimationWrapper direction="left">
         <span className="text-slate-500 dark:text-gray-300">
-          I am a Full Stack Developer, educator, and agency founder currently in my third year of engineering. 
-          With deep technical expertise in Go, Node.js, Next.js, and system design, I&apos;ve built high-concurrency 
-          backend systems, microservice architectures, compilers, and real-time applications. My work blends 
-          low-level programming with modern product development, and I&apos;ve had the opportunity to teach 
-          full stack development at startups and tech communities.
+          I’m a full-stack developer, educator, and builder currently in my third
+          year of engineering. Most of my real learning didn’t come from
+          classrooms, but from building things that broke, fixing them under
+          pressure, and taking responsibility for outcomes.
         </span>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper direction="right">
         <span className="text-slate-500 dark:text-gray-300">
-          I don&apos;t just build products — I architect scalable systems with future-proof designs. Through my agency, 
-          I&apos;ve successfully delivered full-scale web applications to major freelance clients, spanning e-commerce 
-          platforms, SaaS tools, developer utilities, and AI-integrated services — all while managing teams, 
-          timelines, and tech stacks independently.
+          I enjoy working close to fundamentals — understanding how systems think,
+          scale, and fail. Over time, this led me to build backend systems,
+          real-time applications, and full-scale web platforms, while also
+          teaching full-stack development in startup and community environments.
         </span>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper>
         <h2 className="text-2xl font-bold flex items-center gap-2">
-          <FaTrophy className="text-sky-500" /> Achievements
+          <FaTrophy className="text-sky-500" /> What I’ve Been Doing
         </h2>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper direction="left">
         <span className="text-slate-500 dark:text-gray-300">
-          Hackathons are another arena where I thrive; I&apos;ve won several, including Asia&apos;s largest design and 
-          code hackathon, showcasing my ability to build fast, innovate meaningfully, and present clearly under pressure.
-          I&apos;ve also successfully cracked multiple paid internships and worked with major freelance clients through my agency.
+          I’ve worked with freelance clients and teams where I handled
+          architecture, timelines, and execution end-to-end. That experience
+          taught me how to think long-term, make trade-offs, and stay calm when
+          things go wrong.
+        </span>
+      </ScrollAnimationWrapper>
+
+      <ScrollAnimationWrapper direction="right">
+        <span className="text-slate-500 dark:text-gray-300">
+          Hackathons became my proving ground. Tight deadlines, real pressure, and
+          no room for excuses. I’ve won multiple hackathons, including Asia’s
+          largest design-and-code hackathon, and cracked paid internships by
+          focusing on execution over noise.
         </span>
       </ScrollAnimationWrapper>
 
@@ -89,7 +96,7 @@ export default function About() {
           >
             <Image
               src="/alm.JPG"
-              alt="about image"
+              alt="Ankush achievement moment"
               className="rounded-xl"
               height={320}
               width={280}
@@ -108,11 +115,12 @@ export default function About() {
 
       <ScrollAnimationWrapper direction="right">
         <span className="text-slate-500 dark:text-gray-300">
-          I am currently pursuing a Bachelor&apos;s degree in Computer Science
-          from <span className="text-sky-500">GLA University, Mathura</span>. I
-          have completed my higher and secondary Education from Rajasthan Board. I
-          secured <span className="text-sky-500">97%</span> in my class 10th and{" "}
-          <span className="text-sky-500">85.6%</span> in class 12th.
+          I’m pursuing a Bachelor’s degree in Computer Science from{" "}
+          <span className="text-sky-500">GLA University, Mathura</span>. I secured{" "}
+          <span className="text-sky-500">97%</span> in class 10th and{" "}
+          <span className="text-sky-500">85.6%</span> in class 12th, but what
+          mattered more was learning how to think independently and apply
+          knowledge beyond the syllabus.
         </span>
       </ScrollAnimationWrapper>
 
@@ -124,37 +132,24 @@ export default function About() {
 
       <ScrollAnimationWrapper direction="right">
         <span className="text-slate-500 dark:text-gray-300">
-          Beyond the codebase, I share my journey and insights on social media — helping others break into tech, 
-          win hackathons, and shape meaningful careers. I&apos;ve guided juniors, peers, and even seniors — both offline 
-          and online — on everything from system architecture to navigating life as a developer.
+          I actively mentor juniors, peers, and early-stage developers — both
+          offline and online. I document my journey publicly, not to preach, but
+          to help others avoid mistakes I’ve already paid for.
         </span>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper direction="left">
         <h2 className="text-2xl font-bold flex items-center gap-2">
-          <FaLaptopCode className="text-sky-500" /> Why Computer Science?
+          <FaLaptopCode className="text-sky-500" /> Why Computer Science
         </h2>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper direction="right">
         <span className="text-gray-500 dark:text-gray-300">
-          Initially, I was quite confused in life about deciding what to chose as
-          a career so I decided to go with the flow. In India, the most followed
-          degree is Engineering and I chose it&apos;s most popular branch Computer
-          Science. I am quite happy with my decision as I am
-          <span className="text-sky-500"> passionate</span> about development
-          and <span className="text-sky-500"> love to create nice stuff</span>.
-          <span className="text-gray-500 dark:text-gray-300">
-            The most beautiful part about being a developer is{" "}
-            <span className="text-sky-500"> Creativity</span> and{" "}
-            <span className="text-sky-500">Problem solving</span>.
-            Because imagining this world without developers is like{" "}
-            <span className="text-sky-500">
-              imagining a world without oxygen.{" "}
-            </span>
-            At the end of the day, we are the ones who are responsible for
-            making this world a better place. And chaotic at the same time.😉
-          </span>
+          I didn’t start with clarity. I started by going with the flow. Over time,
+          Computer Science grew on me because it rewards problem-solving,
+          creativity, and responsibility. Developers quietly shape the modern
+          world, and that balance keeps me invested.
         </span>
       </ScrollAnimationWrapper>
 
@@ -166,51 +161,27 @@ export default function About() {
 
       <ScrollAnimationWrapper direction="left">
         <span className="text-slate-500 dark:text-gray-300">
-          I have a healthy obsession with learning something new everyday which makes me a better developer and a better{" "}
-          <span className="text-sky-500">Athlete</span>. I love playing{" "}
-          <span className="text-sky-500">Cricket & Badminton</span>.
+          I train my body as seriously as I train my mind. Sports, strength, and
+          movement keep me disciplined, calm, and resilient. Cricket and
+          badminton are part of how I stay sharp.
         </span>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper>
         <h2 className="text-2xl font-bold flex items-center gap-2">
-          <BsTools className="text-sky-500" /> Future Goals
+          <BsTools className="text-sky-500" /> Looking Ahead
         </h2>
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper direction="right">
         <span className="text-slate-500 dark:text-gray-300">
-          Looking ahead, I&apos;m building tools at the intersection of AI, infrastructure, and developer experience, 
-          with a long-term goal of empowering others through scalable tech and real-world knowledge.
+          I’m focused on building depth — in skill, character, and thinking. I’m
+          not in a rush. Technology is my medium, but growth is the real project.
         </span>
       </ScrollAnimationWrapper>
 
-      <ScrollAnimationWrapper direction="left">
-        <div className="py-6 flex space-x-6 space-y-4 flex-wrap">
-          <motion.div 
-            className="w-fit px-4 py-4 dark:text-slate-300 text-slate-500 dark:bg-inherit flex flex-col shadow-md dark:shadow-blue-950 bg-white rounded-sm"
-            whileHover={{ 
-              scale: 1.02,
-              boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)"
-            }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Want to connect with me via Mail?
-            <motion.span 
-              className="text-sky-400 flex space-x-2"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              <RiMailCheckFill />
-              <Link href="mailto:ankushsingh.dev@gmail.com">
-                ankushsingh.dev@gmail.com
-              </Link>{" "}
-            </motion.span>
-          </motion.div>
-        </div>
-      </ScrollAnimationWrapper>
-      <div className="py-3"></div>
+      <EmailCTA />
+      <div className="py-3" />
     </div>
   );
 }
