@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-    name: "Ankush's World",
-    description: "Portfolio of Ankush Singh - Full Stack Developer, Mentor, and Freelancer.",
+    name: "Ankush' Singh",
+    description: "Ankush Singh - Creating, Building, Lifting and Selling!!",
     url: "https://whyankush.wtf",
     ogImage: "https://whyankush.wtf/ankush_bg_image.png",
     profileImage: "https://whyankush.wtf/Ankush.png",
