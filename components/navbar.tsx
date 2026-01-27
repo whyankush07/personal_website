@@ -86,7 +86,6 @@ export const Navbar = () => {
     >
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent opacity-0 md:opacity-100" />
-
       <ul className="relative flex justify-evenly md:justify-center items-end md:flex-col py-3 md:space-y-6 h-full w-full md:border-r md:border-r-inherit md:dark:border-r-inherit dark:border-slate-800 backdrop-filter backdrop-blur-lg bg-[#edeeeb] dark:bg-slate-900/80">
         {" "}
         {/* Decorative top element for desktop */}
