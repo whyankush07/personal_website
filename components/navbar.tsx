@@ -4,13 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { 
-  Home, 
-  User, 
-  MessageSquareQuote, 
-  Zap, 
+import {
+  Home,
+  User,
+  MessageSquareQuote,
+  Zap,
   Briefcase,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 
 interface NavItem {
@@ -49,31 +49,31 @@ export const Navbar = () => {
       path: "/",
       label: "Home",
       Icon: Home,
-      description: "Back to home"
+      description: "Back to home",
     },
     {
       path: "/about",
       label: "About",
       Icon: User,
-      description: "Learn about me"
+      description: "Learn about me",
     },
     {
       path: "/testimonials",
       label: "Testimonials",
       Icon: MessageSquareQuote,
-      description: "What people say"
+      description: "What people say",
     },
     {
       path: "/levelup",
       label: "Resources",
       Icon: Zap,
-      description: "Level up your skills"
+      description: "Level up your skills",
     },
     {
       path: "/freelance",
       label: "Resume",
       Icon: Briefcase,
-      description: "View my work"
+      description: "View my work",
     },
   ];
 
@@ -86,10 +86,10 @@ export const Navbar = () => {
     >
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent opacity-0 md:opacity-100" />
-      
-      <ul className="relative flex justify-evenly md:justify-center items-end md:flex-col py-3 md:space-y-6 h-full w-full max-sm:space-x-7 md:border-r md:border-r-inherit md:dark:border-r-inherit dark:border-slate-800 backdrop-filter backdrop-blur-lg bg-[#edeeeb] dark:bg-slate-900/80">
+      <ul className="relative flex justify-evenly md:justify-center items-end md:flex-col py-3 md:space-y-6 h-full w-full md:border-r md:border-r-inherit md:dark:border-r-inherit dark:border-slate-800 backdrop-filter backdrop-blur-lg bg-[#edeeeb] dark:bg-slate-900/80">
+        {" "}
         {/* Decorative top element for desktop */}
-        <motion.div 
+        <motion.div
           className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent rounded-full"
           animate={{
             scaleX: [0.8, 1, 0.8],
@@ -101,7 +101,6 @@ export const Navbar = () => {
             ease: "easeInOut",
           }}
         />
-
         {navItems.map((item, index) => {
           const { Icon } = item;
           const active = isActive(item.path);
@@ -111,7 +110,7 @@ export const Navbar = () => {
             <motion.li
               key={item.path}
               variants={itemVariants}
-              className="relative italic font-semibold md:pr-8"
+              className="relative italic font-semibold pr-0 md:pr-8"
             >
               <Link
                 href={item.path}
@@ -123,10 +122,10 @@ export const Navbar = () => {
                   className="relative p-2.5 rounded-xl transition-all duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 400, 
-                    damping: 17 
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 17,
                   }}
                 >
                   {/* Active/Hover background glow */}
@@ -143,23 +142,29 @@ export const Navbar = () => {
 
                   {/* Icon with animations */}
                   <motion.div
-                    animate={active ? {
-                      rotate: [0, -10, 10, -10, 0],
-                    } : hovered ? {
-                      y: [0, -3, 0],
-                    } : {}}
+                    animate={
+                      active
+                        ? {
+                            rotate: [0, -10, 10, -10, 0],
+                          }
+                        : hovered
+                          ? {
+                              y: [0, -3, 0],
+                            }
+                          : {}
+                    }
                     transition={{
                       duration: active ? 0.5 : 0.4,
                       ease: "easeInOut",
                     }}
                   >
-                    <Icon 
+                    <Icon
                       className={`transition-all duration-300 ${
-                        active 
-                          ? "text-blue-500 dark:text-blue-400" 
+                        active
+                          ? "text-blue-500 dark:text-blue-400"
                           : hovered
-                          ? "text-blue-400 dark:text-blue-300"
-                          : "text-gray-500 dark:text-gray-400"
+                            ? "text-blue-400 dark:text-blue-300"
+                            : "text-gray-500 dark:text-gray-400"
                       }`}
                       size={24}
                       strokeWidth={active ? 2.5 : 2}
@@ -173,24 +178,24 @@ export const Navbar = () => {
                         className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full"
                         animate={{
                           scale: [1, 1.3, 1],
-                          opacity: [0.7, 1, 0.7]
+                          opacity: [0.7, 1, 0.7],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
-                          ease: "easeInOut"
+                          ease: "easeInOut",
                         }}
                       />
                       <motion.div
                         className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full"
                         animate={{
                           scale: [1, 2, 1],
-                          opacity: [0.5, 0, 0.5]
+                          opacity: [0.5, 0, 0.5],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
-                          ease: "easeInOut"
+                          ease: "easeInOut",
                         }}
                       />
                     </>
@@ -201,15 +206,15 @@ export const Navbar = () => {
                     <motion.div
                       className="absolute -top-0.5 -right-0.5"
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ 
+                      animate={{
                         opacity: [0, 1, 0],
                         scale: [0, 1, 0],
-                        rotate: [0, 180, 360]
+                        rotate: [0, 180, 360],
                       }}
                       transition={{
                         duration: 1,
                         repeat: Infinity,
-                        ease: "easeInOut"
+                        ease: "easeInOut",
                       }}
                     >
                       <Sparkles size={12} className="text-blue-400" />
@@ -221,9 +226,9 @@ export const Navbar = () => {
                     <motion.div
                       className="absolute inset-0 rounded-xl bg-blue-500/20 dark:bg-blue-400/20 -z-20 filter blur-lg"
                       initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ 
-                        opacity: active ? 0.6 : 0.4, 
-                        scale: 1 
+                      animate={{
+                        opacity: active ? 0.6 : 0.4,
+                        scale: 1,
                       }}
                       exit={{ opacity: 0, scale: 0.8 }}
                       transition={{ duration: 0.3 }}
@@ -238,10 +243,10 @@ export const Navbar = () => {
                       initial={{ opacity: 0, x: 10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 10 }}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 300, 
-                        damping: 30 
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
                       }}
                     />
                   )}
@@ -261,7 +266,7 @@ export const Navbar = () => {
                   <div className="relative bg-slate-800 dark:bg-slate-700 text-white px-4 py-2.5 rounded-lg shadow-xl border border-slate-700 dark:border-slate-600">
                     {/* Arrow pointing to icon */}
                     <div className="absolute right-full top-1/2 -translate-y-1/2 border-8 border-transparent border-r-slate-800 dark:border-r-slate-700" />
-                    
+
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-semibold">
                         {item.label}
@@ -271,12 +276,12 @@ export const Navbar = () => {
                           className="w-1.5 h-1.5 bg-blue-400 rounded-full"
                           animate={{
                             scale: [1, 1.2, 1],
-                            opacity: [0.7, 1, 0.7]
+                            opacity: [0.7, 1, 0.7],
                           }}
                           transition={{
                             duration: 1.5,
                             repeat: Infinity,
-                            ease: "easeInOut"
+                            ease: "easeInOut",
                           }}
                         />
                       )}
@@ -292,9 +297,8 @@ export const Navbar = () => {
             </motion.li>
           );
         })}
-
         {/* Decorative bottom element for desktop */}
-        <motion.div 
+        <motion.div
           className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent rounded-full"
           animate={{
             scaleX: [0.8, 1, 0.8],
